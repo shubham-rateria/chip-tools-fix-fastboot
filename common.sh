@@ -52,7 +52,7 @@ wait_for_fastboot() {
   echo -n "waiting for fastboot...";
   export FLASH_WAITING_FOR_DEVICE=1
   for ((i=$TIMEOUT; i>0; i--)) {
-    if [[ ! -z "$(${FASTBOOT} -i 0x1f3a $@ devices)" ]]; then
+    if [[ ! -z "$(${FASTBOOT} 0x1f3a $@ devices)" ]]; then
       echo "OK";
       unset FLASH_WAITING_FOR_DEVICE
       return 0;
