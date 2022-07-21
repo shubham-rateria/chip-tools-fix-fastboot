@@ -227,6 +227,8 @@ flash_images() {
 
   export FLASH_VID_PID=1f3a1010
   if wait_for_fastboot; then
+    echo "in common"
+    echo ${FASTBOOT}
     ${FASTBOOT} flash UBI $IMAGESDIR/chip-$nand_erasesize-$nand_writesize-$nand_oobsize.ubi.sparse || RC=1
     ${FASTBOOT} continue > /dev/null
   else

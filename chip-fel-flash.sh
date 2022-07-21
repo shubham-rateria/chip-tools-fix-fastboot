@@ -197,6 +197,7 @@ else
 
 	echo == waiting for fastboot ==
 	if wait_for_fastboot; then
+    echo "in chip-fel-flash"
 		fastboot flash UBI ${SPARSE_UBI}
 		assert_error 134
 

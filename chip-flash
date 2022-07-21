@@ -266,6 +266,7 @@ else
 
         log "== waiting for fastboot =="
         if wait_for_fastboot ${FASTBOOT_PORT}; then
+            echo "in chip-flash"
             fastboot ${FASTBOOT_PORT} flash UBI ${SPARSE_UBI} > /dev/null
             assert_error 134
 
